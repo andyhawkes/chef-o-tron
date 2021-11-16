@@ -21,6 +21,10 @@ let methods = [
     'Salt-baked',
     'Vegetarian',
     'Vegan',
+    'Roasted',
+    'Candied',
+    'Slow-roasted',
+    'Braised'
 ]
 
 let modifiers = [
@@ -33,7 +37,13 @@ let modifiers = [
     'Foraged',
     'Hand-dived',
     'New season',
-    'Dry-aged'
+    'Dry-aged',
+    'British',
+    'Line-caught',
+    'Artisanal',
+    'Artisan',
+    'Sustainable',
+    'Biodynamic'
 ]
 
 let ingredients = [
@@ -63,7 +73,14 @@ let ingredients = [
     'Egg yolk',
     'Duck egg',
     'Market fish',
-    'Marmite'
+    'Marmite',
+    'Megrim',
+    'Sole',
+    'Miso',
+    'Turbot',
+    'Squab',
+    'Venison',
+    'Rose veal'
 ]
 
 let products = [
@@ -95,5 +112,13 @@ let products = [
     'Sauce',
     'En-croute',
     'En papillote',
-    'Mille-feuille'
+    'Mille-feuille',
+    'Roullade',
+    'Espuma',
+    'Foam',
+    'Velouté',
+    'Gel',
+    'Pithivier',
+    'Sandwich',
+    'Tart'
 ]
