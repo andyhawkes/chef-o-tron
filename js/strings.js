@@ -1,3 +1,5 @@
+// method + modifier + ingredient + product = awesome new Michelin star-worthy recipe
+
 let methods = [
     '',
     'Raw',
