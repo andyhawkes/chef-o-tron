@@ -152,7 +152,7 @@ let ingredients = [
     "Squab",
     "Squid",
     "Sriracha",
-    "Sweetbreads",
+    "Sweetbread",
     "Tripe",
     "Turbot",
     "Venison",
