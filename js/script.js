@@ -63,6 +63,7 @@ let ingredients = [
     'Egg yolk',
     'Duck egg',
     'Market fish',
+    'Marmite'
 ]
 
 let products = [
