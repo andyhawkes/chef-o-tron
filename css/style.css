@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Tangerine');
 
 html, body {
   height: 100%;
@@ -25,7 +25,7 @@ h1 {
    flex-basis: 100%;
 }
 
-.reels {
+.recipe {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,6 +39,9 @@ h1 {
 }
 
 #zeitgeistText {
+  display: inline-block;
+  padding: 2rem 0;
+  font-family: 'Tangerine';
   font-weight: bold;
   font-size: 5rem;
   color: #fff;
@@ -63,4 +66,5 @@ button.enpimperator:hover {
 .credits {
   font-size: 1.2rem;
   padding: 0 2rem;
+  margin: 0 0 2rem;
 }
