@@ -70,7 +70,9 @@ function updateIndexesFromQSParams(){
 }
 
 function updatePageTitle(title){
-    console.log(`${title} | ${appName}`);
+    title = (title != null) ? `${title} | ${appName}` : `${appName}`;
+    document.title = title;
+    document.getElementsByTagName('meta').namedItem('twitter:title').setAttribute('content', title);
 }
 
 window.addEventListener('popstate', (event) => {
