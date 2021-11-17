@@ -250,19 +250,20 @@ let products = [
 ]
 
 let critiques = [
-    "Challenging",
-    "Claggy",
-    "Flabby",
-    "Inedible",
-    "Messy",
-    "Not for me",
-    "Poor plating",
-    "Raw",
-    "Rushed",
-    "Totally raw",
-    "Ugly",
-    "Un-rendered fat",
-    "Under-cooked",
-    "Under-seasoned",
-    "Unusual flavour combination"
+    "\"An unusual flavour combination\"",
+    "\"Challenging\"",
+    "\"Claggy\"",
+    "\"Flabby\"",
+    "\"I can't eat that\"",
+    "\"Inedible\"",
+    "\"Messy\"",
+    "\"Not for me\"",
+    "\"Poor plating\"",
+    "\"Raw\"",
+    "\"Rushed\"",
+    "\"Totally raw\"",
+    "\"Ugly\"",
+    "\"Un-rendered fat\"",
+    "\"Under-cooked\"",
+    "\"Under-seasoned\""
 ]
