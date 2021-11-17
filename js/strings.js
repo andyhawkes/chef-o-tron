@@ -74,6 +74,7 @@ let ingredients = [
     "",
     "Ant",
     "Beef fat",
+    "Black garlic",
     "Black truffle",
     "Blonde caramel",
     "Bloody mary",
