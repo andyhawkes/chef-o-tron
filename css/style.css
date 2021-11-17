@@ -14,6 +14,23 @@ body {
   font-family: 'Inconsolata';
 }
 
+a {
+  color: #000;
+}
+a:hover,
+a:focus {
+  background: #333;
+  color: #fff;
+}
+a.active {
+  color: #666;
+  text-decoration: none;
+}
+a.active:hover {
+  color: #666;
+  background: transparent;
+}
+
 .info {
   display: flex;
   justify-content: center;
@@ -24,11 +41,74 @@ body {
 h1 {
   width: 100%;
   flex-basis: 100%;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.tagline {
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .logo {
   max-width: 80%;
+}
+
+hr.icon {
+  box-sizing: content-box;
+  height: 0;
+  margin: 1rem auto;
+  padding: 0 30vw;
+  border: 0;
+  border-top: 3px solid #333;
+  text-align: center;
+  overflow: visible;
+}
+hr.icon:after {
+  /* f046 checked box, f0e7 lightning, f0f5 cutlery */
+  /* see https://fontawesome.com/v4.7/cheatsheet/ */
+  display: inline-block;
+  position: relative;
+  top: -1.7rem;
+  padding: 0 1rem;
+  font-family: FontAwesome;
+  font-size: 3rem;
+  background-color: #ccc;
+}
+hr.lightning:after {
+  content: "\f0e7";
+}
+hr.checkbox:after {
+  content: "\f046";
+}
+
+nav {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  width: 30vw;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
+nav ul li:first-child {
+  margin-right: 2rem;
+  text-align: right;
+}
+nav ul li:last-child {
+  margin-left: 2rem;
+  text-align: left;
+}
+nav ul li a {
+
 }
 
 .recipe {
@@ -60,6 +140,32 @@ button.enpimperator {
 button.enpimperator:hover {
   color: #333;
   background: #fff;
+}
+
+#bingoCard {
+  width: 80vw;
+  margin: 1rem 10%;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: repeat(5, 16vw);
+  grid-template-rows: repeat(5, 16vw);
+  grid-auto-flow: column;
+}
+
+#bingoCard div {
+  border: 1px solid #333;
+  height: 16vw;
+  display: flex;
+  cursor: pointer;
+}
+
+#bingoCard div span {
+  margin: auto;
+}
+
+#bingoCard .checked {
+  background: radial-gradient(circle 8vw, blue, #1e90ff 80%, rgb(255,255,255,0));
+  color: #fff;
 }
 
 .credits {

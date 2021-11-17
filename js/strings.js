@@ -248,3 +248,21 @@ let products = [
     "Vol-au-vent",
     "Wensleydale"
 ]
+
+let critiques = [
+    "Challenging",
+    "Claggy",
+    "Flabby",
+    "Inedible",
+    "Messy",
+    "Not for me",
+    "Poor plating",
+    "Raw",
+    "Rushed",
+    "Totally raw",
+    "Ugly",
+    "Un-rendered fat",
+    "Under-cooked",
+    "Under-seasoned",
+    "Unusual flavour combination"
+]
