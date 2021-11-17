@@ -1,4 +1,4 @@
-const appName = 'Chef-o-tron';
+const appName = 'CHEF-O-TRON';
 const combinations = methods.length * modifiers.length * ingredients.length * products.length;
 
 let methodsIndex = Math.floor((Math.random() * methods.length));
