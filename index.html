@@ -9,13 +9,30 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Twitter metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@chef_o_tron" />
+  <meta name="twitter:creator" content="@andyhawkes" />
+  <meta name="twitter:title" content="Chef-o-tron - the future of culinary innovation and gourmet recipe inspiration" />
+  <meta name="twitter:description" content="Want the latest in on-trend dishes from the culinary zeitgeist but can't be arsed creating your own ideas? No problem - Chef-o-tron has millions of unique menu ideas for you!" />
+  <meta name="twitter:image" content="http://chef-o-tron.andyhawkes.co.uk/images/logo-with-text.png" />
+
+  <!-- OpenGraph metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://chef-o-tron.andyhawkes.co.uk/" />
+  <meta property="og:title" content="Chef-o-tron - the future of culinary innovation and gourmet recipe inspiration" />
+  <meta property="og:description"
+    content="Want the latest in on-trend dishes from the culinary zeitgeist but can't be arsed creating your own ideas? No problem - Chef-o-tron has millions of unique menu ideas for you!" />
+  <meta property="og:image"
+    content="http://chef-o-tron.andyhawkes.co.uk/images/logo-with-text.png" />
 </head>
 <body>
   <div class="info">
-    <h1>Chef-o-tron</h1>
-    <h2>The future of culinary innovation and gourmet recipe inspiration</h2>
-    <p>Want the latest in on-trend dishes from the culinary zeitgeist but can't be arsed creating your own ideas?<br />
-    No problem!</p>
+    <img class="logo" src="images/logo-with-text.png" alt="Chef-o-tron" />
+    <h1>The future of culinary innovation and gourmet recipe inspiration</h1>
+    <p>Want the latest in on-trend dishes from the culinary zeitgeist but can't be arsed creating your own ideas?</p>
+    <p>No problem - Chef-o-tron has <span id="combinations">many</span> unique menu ideas for you!</p>
   </div>
 
   <div class="recipe">
@@ -24,7 +41,7 @@
     <span id="zeitgeistText"></span></p>
   </div>
 
-  <button class="enpimperator" onClick="pimpMyMenu()">Give me more!</button>
+  <button class="enpimperator" onClick="pimpMyMenu(true)">Give me more!</button>
 
   <div class="credits">
     <p>This page was quickly (and very roughly) cobbled together by <a href="https://twitter.com/andyhawkes">Andy Hawkes</a> because <a href="https://twitter.com/justcookit/status/1460522952978571264">Alex Rushmer</a> and <a href="https://twitter.com/DhruvBaker1/status/1460568926727946241">Dhruv Baker</a> were moaning about ridiculous seasonal foodstuffs on Twitter.</p>
