@@ -15,11 +15,11 @@ function generateCard(){
 
     removeCard();
 
-    options.methods = methods.map((x) => x);
-    options.modifiers = modifiers.map((x) => x);
-    options.ingredients = ingredients.map((x) => x);
-    options.products = products.map((x) => x);
-    options.critiques = critiques.map((x) => x);
+    options.methods = methods.full.map((x) => x);
+    options.modifiers = modifiers.full.map((x) => x);
+    options.ingredients = ingredients.full.map((x) => x);
+    options.products = products.full.map((x) => x);
+    options.critiques = critiques.full.map((x) => x);
 
     // Remove empty first items from arrays
     options.methods.shift();
@@ -50,7 +50,6 @@ function generateCard(){
         el.classList.toggle('checked');
         checkScore();
     }));
-
 }
 
 function checkScore(){

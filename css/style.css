@@ -7,8 +7,7 @@ html, body {
 }
 
 body {
-  /* background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF); */
-  background: #ccc;
+  background: #efefef;
   color: #333;
   text-align: center;
   font-family: 'Inconsolata';
@@ -36,6 +35,13 @@ a.active:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+.info * {
+  max-width: 80%;
+}
+.info ul {
+  text-align: left;
+  margin-left: 20%;
 }
 
 h1 {
@@ -72,13 +78,19 @@ hr.icon:after {
   padding: 0 1rem;
   font-family: FontAwesome;
   font-size: 3rem;
-  background-color: #ccc;
+  background-color: #efefef;
 }
 hr.lightning:after {
   content: "\f0e7";
 }
 hr.checkbox:after {
   content: "\f046";
+}
+hr.xmas:after {
+  content: "\f2dc";
+}
+hr.info:after {
+  content: "\f05a";
 }
 
 nav {
@@ -97,18 +109,23 @@ nav ul li {
   width: 30vw;
   margin: 0;
   padding: 0;
+  flex: 50%;
   justify-content: space-between;
 }
-nav ul li:first-child {
+nav ul li:nth-child(odd) {
   margin-right: 2rem;
   text-align: right;
 }
-nav ul li:last-child {
+nav ul li:nth-child(even) {
   margin-left: 2rem;
   text-align: left;
 }
-nav ul li a {
-
+nav ul li a {}
+nav ul li a.active:before {
+  content: "\2192\2002";
+}
+nav ul li a.active:after {
+  content: "\2002\2190";
 }
 
 .recipe {
@@ -125,19 +142,36 @@ nav ul li a {
   font-size: 5rem;
   color: #333;
   text-shadow: 0.5rem 0.5rem 0.5rem rgba(255,255,255,0.5);
+  max-width: 80%;
 }
 
-button.enpimperator {
-  font-size: 1.5rem;
-  border-radius: 1rem;
-  padding: 0.5rem;
+button {
+  font-size: 1.25rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem 2rem;
   cursor: pointer;
-  background: #333;
+  background: #000;
   color: #fff;
-  margin: 0 0 1rem;
+  margin: 0 0 2rem;
+  position: relative;
+  border: 3px solid #000;
+}
+button:before {
+  content: " ";
+  position: absolute;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  z-index: -1;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 3px solid #000;
+  background: #fff;
 }
 
-button.enpimperator:hover {
+
+button:hover {
   color: #333;
   background: #fff;
 }
@@ -153,7 +187,7 @@ button.enpimperator:hover {
 }
 
 #bingoCard div {
-  border: 1px solid #333;
+  border: 3px solid #333;
   height: 16vw;
   display: flex;
   cursor: pointer;
@@ -168,10 +202,12 @@ button.enpimperator:hover {
   color: #fff;
 }
 
-.credits {
-  font-size: 1.2rem;
-  padding: 0 2rem;
+footer {
+  font-size: 1rem;
+  padding: 1rem 10vw;
   margin: 0 0 2rem;
+}
+footer * {
 }
 
 .github-corner:hover .octo-arm {

@@ -14,7 +14,7 @@ function updateHistory() {
         'productsIndex': productsIndex
     };
     let title = zeitgeistRecipe;
-    let url = `/?a=${methodsIndex}&b=${modifiersIndex}&c=${ingredientsIndex}&d=${productsIndex}`;
+    let url = `${window.location.pathname}?a=${methodsIndex}&b=${modifiersIndex}&c=${ingredientsIndex}&d=${productsIndex}`;
     history.pushState(state, title, url);
 }
 

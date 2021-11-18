@@ -1,10 +1,10 @@
-const appName = 'CHEF-O-TRON';
-const combinations = methods.full.length * modifiers.full.length * ingredients.full.length * products.full.length;
+const appName = 'CHEF-O-TRON NPD bot';
+const combinations = methods.full.length * modifiers.xmas.length * ingredients.xmas.length * products.xmas.length;
 
 let methodsIndex = Math.floor((Math.random() * methods.full.length));
-let modifiersIndex = Math.floor((Math.random() * modifiers.full.length));
-let ingredientsIndex = Math.floor((Math.random() * ingredients.full.length));
-let productsIndex = Math.floor((Math.random() * products.full.length));
+let modifiersIndex = Math.floor((Math.random() * modifiers.xmas.length));
+let ingredientsIndex = Math.floor((Math.random() * ingredients.xmas.length));
+let productsIndex = Math.floor((Math.random() * products.xmas.length));
 
 let comboTextElement = document.getElementById('combinations');
 comboTextElement.innerHTML = combinations.toLocaleString();
@@ -15,37 +15,37 @@ let createNewItem = true;
 
 function pimpMyMenu(history) {
     let method = methods.full[methodsIndex].toLowerCase();
-    let modifier = modifiers.full[modifiersIndex].toLowerCase();
-    let ingredient = ingredients.full[ingredientsIndex].toLowerCase();
-    let product = products.full[productsIndex].toLowerCase();
+    let modifier = modifiers.xmas[modifiersIndex].toLowerCase();
+    let ingredient = ingredients.xmas[ingredientsIndex].toLowerCase();
+    let product = products.xmas[productsIndex].toLowerCase();
 
     zeitgeistRecipe = method + " " + modifier + " " + ingredient + " " + product;
     zeitgeistRecipe = capitalizeFirstLetter(zeitgeistRecipe.trim());
-    
+
     let textElement = document.getElementById('zeitgeistText');
     textElement.innerHTML = zeitgeistRecipe;
-    if(history === true) {
+    if (history === true) {
         updateHistory();
     }
     updateIndexes();
     updatePageTitle(zeitgeistRecipe);
 }
 
-function updateIndexes(){
+function updateIndexes() {
     methodsIndex = Math.floor((Math.random() * methods.full.length));
-    modifiersIndex = Math.floor((Math.random() * modifiers.full.length));
-    ingredientsIndex = Math.floor((Math.random() * ingredients.full.length));
-    productsIndex = Math.floor((Math.random() * products.full.length));
+    modifiersIndex = Math.floor((Math.random() * modifiers.xmas.length));
+    ingredientsIndex = Math.floor((Math.random() * ingredients.xmas.length));
+    productsIndex = Math.floor((Math.random() * products.xmas.length));
 }
 
-function updateIndexesFromQSParams(){
+function updateIndexesFromQSParams() {
     let QSparams = Object.fromEntries(new URLSearchParams(location.search));
     methodsIndex = QSparams.a && QSparams.a < methods.full.length ? QSparams.a : 0;
-    modifiersIndex = QSparams.b && QSparams.b < modifiers.full.length ? QSparams.b : 0;
-    ingredientsIndex = QSparams.c && QSparams.c < ingredients.full.length ? QSparams.c : 0;
-    productsIndex = QSparams.d && QSparams.d < products.full.length ? QSparams.d : 0;
+    modifiersIndex = QSparams.b && QSparams.b < modifiers.xmas.length ? QSparams.b : 0;
+    ingredientsIndex = QSparams.c && QSparams.c < ingredients.xmas.length ? QSparams.c : 0;
+    productsIndex = QSparams.d && QSparams.d < products.xmas.length ? QSparams.d : 0;
     // If all indexes are 0 then re-create them randomly
-    if(methodsIndex == 0 && modifiersIndex == 0 && ingredientsIndex == 0 && productsIndex == 0){
+    if (methodsIndex == 0 && modifiersIndex == 0 && ingredientsIndex == 0 && productsIndex == 0) {
         updateIndexes();
     }
 }
