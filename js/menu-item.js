@@ -1,5 +1,6 @@
 const appName = 'CHEF-O-TRON';
 const combinations = methods.full.length * modifiers.full.length * ingredients.full.length * products.full.length;
+const twitterMessageText = `Loving this recipe idea from ${ twitterUsername } - `;
 
 let methodsIndex = Math.floor((Math.random() * methods.full.length));
 let modifiersIndex = Math.floor((Math.random() * modifiers.full.length));
@@ -29,6 +30,7 @@ function generateMenuIdea(history) {
     }
     updateIndexes();
     updatePageTitle(zeitgeistRecipe);
+    updateTwitterLink(twitterMessageText, zeitgeistRecipe);
 }
 
 function updateIndexes(){

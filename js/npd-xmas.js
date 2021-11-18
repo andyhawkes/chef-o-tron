@@ -1,5 +1,6 @@
 const appName = 'Xmas NPD bot | CHEF-O-TRON';
 const combinations = methods.xmas.length * modifiers.xmas.length * ingredients.xmas.length * products.xmas.length;
+const twitterMessageText = `Loving this Christmas recipe idea from ${twitterUsername} - `;
 
 let methodsIndex = Math.floor((Math.random() * methods.xmas.length));
 let modifiersIndex = Math.floor((Math.random() * modifiers.xmas.length));
@@ -29,6 +30,7 @@ function generateXmasIdea(history) {
     }
     updateIndexes();
     updatePageTitle(zeitgeistRecipe);
+    updateTwitterLink(twitterMessageText, zeitgeistRecipe);
 }
 
 function updateIndexes() {

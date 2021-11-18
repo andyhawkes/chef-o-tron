@@ -149,18 +149,21 @@ nav ul li a.active:after {
   max-width: 80%;
 }
 
-button {
+button,
+.button {
   font-size: 1.25rem;
   border-radius: 1.5rem;
   padding: 0.5rem 2rem;
   cursor: pointer;
   background: #000;
   color: #fff;
-  margin: 0 0 2rem;
+  margin: 0 1rem 2rem;
   position: relative;
   border: 3px solid #000;
+  text-decoration: none;
 }
-button:before {
+button:before,
+.button:before {
   content: " ";
   position: absolute;
   border-radius: 2rem;
@@ -173,9 +176,8 @@ button:before {
   border: 3px solid #000;
   background: #fff;
 }
-
-
-button:hover {
+button:hover,
+.buton:hover {
   color: #333;
   background: #fff;
 }
