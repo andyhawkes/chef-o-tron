@@ -13,7 +13,7 @@ let zeitgeistRecipe = "Beans on toast";
 
 let createNewItem = true;
 
-function pimpMyMenu(history) {
+function generateMenuIdea(history) {
     let method = methods.full[methodsIndex].toLowerCase();
     let modifier = modifiers.full[modifiersIndex].toLowerCase();
     let ingredient = ingredients.full[ingredientsIndex].toLowerCase();
@@ -55,9 +55,9 @@ window.addEventListener('popstate', (event) => {
     modifiersIndex = event.state.modifiersIndex;
     ingredientsIndex = event.state.ingredientsIndex;
     productsIndex = event.state.productsIndex;
-    pimpMyMenu(false);
+    generateMenuIdea(false);
 });
 
 updateIndexesFromQSParams();
 
-pimpMyMenu(createNewItem);
+generateMenuIdea(createNewItem);

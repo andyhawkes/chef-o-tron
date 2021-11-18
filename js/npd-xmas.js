@@ -1,4 +1,4 @@
-const appName = 'CHEF-O-TRON NPD bot';
+const appName = 'Xmas NPD bot | CHEF-O-TRON';
 const combinations = methods.full.length * modifiers.xmas.length * ingredients.xmas.length * products.xmas.length;
 
 let methodsIndex = Math.floor((Math.random() * methods.full.length));
@@ -13,7 +13,7 @@ let zeitgeistRecipe = "Beans on toast";
 
 let createNewItem = true;
 
-function pimpMyMenu(history) {
+function generateXmasIdea(history) {
     let method = methods.full[methodsIndex].toLowerCase();
     let modifier = modifiers.xmas[modifiersIndex].toLowerCase();
     let ingredient = ingredients.xmas[ingredientsIndex].toLowerCase();
@@ -55,9 +55,9 @@ window.addEventListener('popstate', (event) => {
     modifiersIndex = event.state.modifiersIndex;
     ingredientsIndex = event.state.ingredientsIndex;
     productsIndex = event.state.productsIndex;
-    pimpMyMenu(false);
+    generateXmasIdea(false);
 });
 
 updateIndexesFromQSParams();
 
-pimpMyMenu(createNewItem);
+generateXmasIdea(createNewItem);

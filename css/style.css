@@ -93,6 +93,9 @@ hr.info:after {
   content: "\f05a";
 }
 
+header {
+  margin-bottom: 1.5rem;
+}
 nav {
   display: flex;
   flex-basis: 100%;
@@ -111,6 +114,7 @@ nav ul li {
   padding: 0;
   flex: 50%;
   justify-content: space-between;
+  line-height: 1.5;
 }
 nav ul li:nth-child(odd) {
   margin-right: 2rem;
