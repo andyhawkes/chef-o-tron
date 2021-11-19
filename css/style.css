@@ -10,7 +10,7 @@ body {
   background: #efefef;
   color: #333;
   text-align: center;
-  font-family: 'Inconsolata';
+  font-family: 'Inconsolata', "Courier New", "Courier", monospace;
 }
 
 a {
@@ -29,6 +29,9 @@ a.active:hover {
   color: #666;
   background: transparent;
 }
+sup a {
+  text-decoration: none;
+}
 
 .info {
   display: flex;
@@ -42,6 +45,9 @@ a.active:hover {
 .info ul {
   text-align: left;
   margin-left: 20%;
+}
+.info ul ul {
+  margin-left: 2rem;
 }
 
 h1 {
@@ -151,6 +157,7 @@ nav ul li a.active:after {
 button,
 .button {
   font-size: 1.25rem;
+  font-family: inherit;
   border-radius: 1.5rem;
   padding: 0.5rem 2rem;
   cursor: pointer;

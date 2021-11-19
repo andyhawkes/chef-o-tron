@@ -83,6 +83,7 @@ window.addEventListener('popstate', (event) => {
     indices.modifiers = event.state.modifiersIndex;
     indices.ingredients = event.state.ingredientsIndex;
     indices.products = event.state.productsIndex;
+    restoreRecipeComponentsFromIndices();
     outputMenuIdea(false);
 });
 

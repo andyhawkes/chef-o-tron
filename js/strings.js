@@ -119,6 +119,7 @@ let textComponents = {
             "Sustainable",
             "Thai-inspired",
             // Add new items at the end to prevent links breaking
+            "Miniature",
         ],
         "xmas": [
             "",
@@ -138,6 +139,7 @@ let textComponents = {
             "Sustainable",
             "Whiskey-infused",
             // Add new items at the end to prevent links breaking
+            "Miniature",
         ],
         "bakeoff": [
             "Dairy free",
@@ -255,6 +257,7 @@ let textComponents = {
             "Celeriac",
             "Tonka bean",
             "Spelt",
+            "Seaweed",
         ],
         "xmas": [
             "",
@@ -303,6 +306,8 @@ let textComponents = {
             "Whole ham",
             "Whole salmon",
             // Add new items at the end to prevent links breaking
+            "Mulled wine",
+            "Marc de champagne"
         ]
     },
     "products": {
@@ -430,6 +435,9 @@ let textComponents = {
             "With a picture of Santa on the box",
             "Wrapped in bacon",
             // Add new items at the end to prevent links breaking
+            "After-dinner mints",
+            "Truffles",
+            "Peanuts"
         ]
     },
     "critiques": {
