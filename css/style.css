@@ -131,10 +131,10 @@ nav ul li:nth-child(even) {
   text-align: left;
 }
 nav ul li a.active:before {
-  content: "\2192\2002";
+  content: "\21D2\2002";
 }
 nav ul li a.active:after {
-  content: "\2002\2190";
+  content: "\2002\21D0";
 }
 
 .recipe {
