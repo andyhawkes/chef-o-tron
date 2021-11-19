@@ -91,6 +91,9 @@ let textComponents = {
             "Vegetarian",
             "Whipped",
             // Add new items at the end to prevent links breaking
+        ],
+        "bakeoff": [
+            ""
         ]
     },
     "modifiers":{
@@ -135,6 +138,14 @@ let textComponents = {
             "Sustainable",
             "Whiskey-infused",
             // Add new items at the end to prevent links breaking
+        ],
+        "bakeoff": [
+            "Dairy free",
+            "Eggless",
+            "Gluten free",
+            "Savoury",
+            "Sweet",
+            "Vegan",
         ]
     },
     "ingredients": {
@@ -242,6 +253,8 @@ let textComponents = {
             "Wood pigeon",
             // Add new items at the end to prevent links breaking
             "Celeriac",
+            "Tonka bean",
+            "Spelt",
         ],
         "xmas": [
             "",
@@ -371,6 +384,7 @@ let textComponents = {
             "Wensleydale",
             // Add new items at the end to prevent links breaking
             "Puree",
+            "Risotto",
         ],
         "xmas": [
             "Baubles",
@@ -421,24 +435,62 @@ let textComponents = {
     "critiques": {
         "default": [
             // No persistent links here (yet) so keep it alphabetical for ease of maintenance
+            "\"A bit messy\"",
             "\"A bit rushed\"",
+            "\"A good start in the competition\"",
             "\"An unusual flavour combination\"",
+            "\"Attention to detail\"",
+            "\"Bland\"",
+            "\"There's blood on the plate\"",
             "\"Challenging\"",
+            "\"Chef's brain\"",
             "\"Claggy\"",
             "\"Faultless\"",
             "\"Flabby\"",
             "\"I can't eat that\"",
+            "\"I'd pay for that in a restaurant\"",
             "\"Inedible\"",
-            "\"Messy\"",
+            "\"It looks terrible\"",
             "\"Not for me\"",
+            "\"Over-seasoned\"",
+            "\"Phwoar!\"",
             "\"Poor plating\"",
             "\"Raw\"",
+            "\"Raw in the middle\"",
             "\"Restaurant-worthy\"",
+            "\"Soggy bottom\"",
+            "\"Too much salt\"",
+            "\"Too sweet for me\"",
             "\"Totally raw\"",
             "\"Ugly\"",
             "\"Un-rendered fat\"",
             "\"Under-cooked\"",
-            "\"Under-seasoned\""
+            "\"Under-seasoned\"",
+            "\"You needed to rest it\"",
+            "\"You rescued it\"",
+            "\"Your sauce has split\"",
+        ],
+        "bakeoff": [
+            // No persistent links here (yet) so keep it alphabetical for ease of maintenance
+            "\"A bit messy\"",
+            "\"A bit rushed\"",
+            "\"An unusual flavour combination\"",
+            "\"Attention to detail\"",
+            "\"Bland\"",
+            "\"Challenging\"",
+            "\"Claggy\"",
+            "\"Faultless\"",
+            "\"I can't eat that\"",
+            "\"Inedible\"",
+            "\"It looks terrible\"",
+            "\"Over-baked\"",
+            "\"Raw in the middle\"",
+            "\"Soggy bottom\"",
+            "\"Totally raw\"",
+            "\"Ugly\"",
+            "\"Under-baked\"",
+            "\"Under-proved\"",
+            "\"You rescued it\"",
         ]
     }
 }
