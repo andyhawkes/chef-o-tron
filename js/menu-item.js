@@ -1,65 +1,89 @@
-const appName = 'CHEF-O-TRON';
-const combinations = methods.full.length * modifiers.full.length * ingredients.full.length * products.full.length;
-const twitterMessageText = `Loving this recipe idea from ${ twitterUsername } - `;
+const combinations = textComponents.methods[dataset].length * textComponents.modifiers[dataset].length * textComponents.ingredients[dataset].length * textComponents.products[dataset].length;
 
-let methodsIndex = Math.floor((Math.random() * methods.full.length));
-let modifiersIndex = Math.floor((Math.random() * modifiers.full.length));
-let ingredientsIndex = Math.floor((Math.random() * ingredients.full.length));
-let productsIndex = Math.floor((Math.random() * products.full.length));
+let indices = {
+    "methods": 0,
+    "modifiers": 0,
+    "ingredients": 0,
+    "products": 0
+}
+let recipeComponents = {}
+let zeitgeistRecipe = "Beans on toast"
 
-let comboTextElement = document.getElementById('combinations');
-comboTextElement.innerHTML = combinations.toLocaleString();
+function randomiseRecipeComponents() {
+    for (const component in datasets[dataset]) {
+        let index = Math.floor((Math.random() * textComponents[component][datasets[dataset][component]].length))
+        recipeComponents[component] = {
+            "index": index,
+            "value": textComponents[component][datasets[dataset][component]][index]
+        }
+        indices[component] = index;
+    }
+}
 
-let zeitgeistRecipe = "Beans on toast";
+function restoreRecipeComponentsFromIndices() {
+    for (const component in datasets[dataset]) {
+        recipeComponents[component] = {
+            "index": indices[component],
+            "value": textComponents[component][datasets[dataset][component]][indices[component]]
+        }
+    }
+}
 
-let createNewItem = true;
+function outputMenuIdea(newItem) {
+    if (newItem === true) {
+        randomiseRecipeComponents();
+        updateHistory();
+    }
 
-function generateMenuIdea(history) {
-    let method = methods.full[methodsIndex].toLowerCase();
-    let modifier = modifiers.full[modifiersIndex].toLowerCase();
-    let ingredient = ingredients.full[ingredientsIndex].toLowerCase();
-    let product = products.full[productsIndex].toLowerCase();
+    let method = recipeComponents.methods.value.toLowerCase();
+    let modifier = recipeComponents.modifiers.value.toLowerCase();
+    let ingredient = recipeComponents.ingredients.value.toLowerCase();
+    let product = recipeComponents.products.value.toLowerCase();
 
     zeitgeistRecipe = method + " " + modifier + " " + ingredient + " " + product;
     zeitgeistRecipe = capitalizeFirstLetter(zeitgeistRecipe.trim());
     
     let textElement = document.getElementById('zeitgeistText');
     textElement.innerHTML = zeitgeistRecipe;
-    if(history === true) {
-        updateHistory();
-    }
-    updateIndexes();
     updatePageTitle(zeitgeistRecipe);
-    updateTwitterLink(twitterMessageText, zeitgeistRecipe);
+    updateTwitterLink(twitterMessageText[dataset], zeitgeistRecipe);
 }
 
-function updateIndexes(){
-    methodsIndex = Math.floor((Math.random() * methods.full.length));
-    modifiersIndex = Math.floor((Math.random() * modifiers.full.length));
-    ingredientsIndex = Math.floor((Math.random() * ingredients.full.length));
-    productsIndex = Math.floor((Math.random() * products.full.length));
-}
-
-function updateIndexesFromQSParams(){
+function updateIndicesFromQSParams(){
     let QSparams = Object.fromEntries(new URLSearchParams(location.search));
-    methodsIndex = QSparams.a && QSparams.a < methods.full.length ? QSparams.a : 0;
-    modifiersIndex = QSparams.b && QSparams.b < modifiers.full.length ? QSparams.b : 0;
-    ingredientsIndex = QSparams.c && QSparams.c < ingredients.full.length ? QSparams.c : 0;
-    productsIndex = QSparams.d && QSparams.d < products.full.length ? QSparams.d : 0;
+    indices.methods = QSparams.a && QSparams.a < textComponents.methods[dataset].length ? QSparams.a : 0;
+    indices.modifiers = QSparams.b && QSparams.b < textComponents.modifiers[dataset].length ? QSparams.b : 0;
+    indices.ingredients = QSparams.c && QSparams.c < textComponents.ingredients[dataset].length ? QSparams.c : 1;
+    indices.products = QSparams.d && QSparams.d < textComponents.products[dataset].length ? QSparams.d : 0;
+}
+
+function validateIndices() {
     // If all indexes are 0 then re-create them randomly
-    if(methodsIndex == 0 && modifiersIndex == 0 && ingredientsIndex == 0 && productsIndex == 0){
-        updateIndexes();
+    if (indices.methods == 0 && indices.modifiers == 0 && indices.ingredients == 1 && indices.products == 0) {
+        randomiseRecipeComponents();
+    } else {
+        restoreRecipeComponentsFromIndices();
     }
+}
+
+function updateComboText() {
+    let comboTextElement = document.getElementById('combinations');
+    comboTextElement.innerHTML = combinations.toLocaleString();
+}
+
+function init(){
+    updateComboText();
+    updateIndicesFromQSParams();
+    validateIndices();
+    outputMenuIdea(false);
 }
 
 window.addEventListener('popstate', (event) => {
-    methodsIndex = event.state.methodsIndex;
-    modifiersIndex = event.state.modifiersIndex;
-    ingredientsIndex = event.state.ingredientsIndex;
-    productsIndex = event.state.productsIndex;
-    generateMenuIdea(false);
+    indices.methods = event.state.methodsIndex;
+    indices.modifiers = event.state.modifiersIndex;
+    indices.ingredients = event.state.ingredientsIndex;
+    indices.products = event.state.productsIndex;
+    outputMenuIdea(false);
 });
 
-updateIndexesFromQSParams();
-
-generateMenuIdea(createNewItem);
+init();

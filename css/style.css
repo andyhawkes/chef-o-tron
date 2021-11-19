@@ -124,7 +124,6 @@ nav ul li:nth-child(even) {
   margin-left: 2rem;
   text-align: left;
 }
-nav ul li a {}
 nav ul li a.active:before {
   content: "\2192\2002";
 }
@@ -212,8 +211,6 @@ footer {
   font-size: 1rem;
   padding: 1rem 10vw;
   margin: 0 0 2rem;
-}
-footer * {
 }
 
 .github-corner:hover .octo-arm {

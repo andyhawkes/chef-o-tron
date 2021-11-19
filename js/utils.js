@@ -1,7 +1,3 @@
-const twitterBaseURL = "https://twitter.com/intent/tweet?text=";
-const twitterUsername = "@chef_o_tron";
-const twitterHashtag = "#chefotron";
-
 Array.prototype.random = function () {
     return this[Math.floor((Math.random() * this.length))];
 }
@@ -12,18 +8,18 @@ function capitalizeFirstLetter(string) {
 
 function updateHistory() {
     let state = {
-        'methodsIndex': methodsIndex,
-        'modifiersIndex': modifiersIndex,
-        'ingredientsIndex': ingredientsIndex,
-        'productsIndex': productsIndex
+        'methodsIndex': indices.methods,
+        'modifiersIndex': indices.modifiers,
+        'ingredientsIndex': indices.ingredients,
+        'productsIndex': indices.products
     };
     let title = zeitgeistRecipe;
-    let url = `${window.location.pathname}?a=${methodsIndex}&b=${modifiersIndex}&c=${ingredientsIndex}&d=${productsIndex}`;
+    let url = `${window.location.pathname}?a=${indices.methods}&b=${indices.modifiers}&c=${indices.ingredients}&d=${indices.products}`;
     history.pushState(state, title, url);
 }
 
 function updatePageTitle(title) {
-    title = (title != null) ? `${title} | ${appName}` : `${appName}`;
+    title = (title != null) ? `${title} | ${appNames[dataset]}` : `${appNames[dataset]}`;
     document.title = title;
     document.getElementsByTagName('meta').namedItem('twitter:title').setAttribute('content', title);
 }

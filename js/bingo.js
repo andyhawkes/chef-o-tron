@@ -15,13 +15,16 @@ function generateCard(){
 
     removeCard();
 
-    options.methods = methods.full.map((x) => x);
-    options.modifiers = modifiers.full.map((x) => x);
-    options.ingredients = ingredients.full.map((x) => x);
-    options.products = products.full.map((x) => x);
-    options.critiques = critiques.full.map((x) => x);
+    options.methods = textComponents.methods[datasets[dataset].methods].map((x) => x);
+    options.modifiers = textComponents.modifiers[datasets[dataset].modifiers].map((x) => x);
+    options.ingredients = textComponents.ingredients[datasets[dataset].ingredients].map((x) => x);
+    options.products = textComponents.products[datasets[dataset].products].map((x) => x);
+    options.critiques = textComponents.critiques[datasets[dataset].critiques].map((x) => x);
 
-    // Remove empty first items from arrays
+    // Remove first items from arrays where it is an empty string
+    for (const option in options){
+
+    }
     options.methods.shift();
     options.modifiers.shift();
     options.ingredients.shift();
@@ -29,7 +32,6 @@ function generateCard(){
     for (const property in selections) {
         for (i = 0; i < selections[property]; i++) {
             let randomIndex = Math.floor((Math.random() * options[property].length));
-            console.log(randomIndex);
             selected.push(options[property][randomIndex]);
             options[property].splice(randomIndex, 1);
         }
@@ -58,7 +60,7 @@ function checkScore(){
     if(tiles == checked){
         alert("BINGO!!!");
     } else {
-        console.log (`${checked} of ${tiles} squares checked off`);
+        // console.log (`${checked} of ${tiles} squares checked off`);
     }
 }
 
