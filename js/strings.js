@@ -276,6 +276,8 @@ let textComponents = {
             "Sweet potato",
             "Butternut squash",
             "Pumpkin",
+            "Sea bream",
+            "Coffee caramel",
         ],
         "xmas": [
             "",
@@ -409,6 +411,10 @@ let textComponents = {
             "Risotto",
             "Flatbread",
             "Curry",
+            "Kofte",
+            "With a herb vinaigrette",
+            "Poached pear",
+            "Poached egg",
         ],
         "xmas": [
             "Baubles",
