@@ -49,6 +49,8 @@ let textComponents = {
             "Vegetarian",
             "Whipped",
             // Add new items at the end to prevent links breaking
+            "Cured",
+            "Salt-cured",
         ],
         "xmas": [
             "",
@@ -120,6 +122,9 @@ let textComponents = {
             "Thai-inspired",
             // Add new items at the end to prevent links breaking
             "Miniature",
+            "French trimmed",
+            "40-day aged",
+            "Fermented"
         ],
         "xmas": [
             "",
@@ -258,6 +263,19 @@ let textComponents = {
             "Tonka bean",
             "Spelt",
             "Seaweed",
+            "French meringue",
+            "Italian meringue",
+            "Rack of lamb",
+            "Cannon of lamb",
+            "Lobster",
+            "Beef fillet",
+            "Pork fillet",
+            "Fillet steak",
+            "Jerusalem artichoke",
+            "New potato",
+            "Sweet potato",
+            "Butternut squash",
+            "Pumpkin",
         ],
         "xmas": [
             "",
@@ -324,7 +342,6 @@ let textComponents = {
             "Crumb",
             "Crème brûlée",
             "Custard",
-            "Eggnog",
             "En gelée",
             "En papillote",
             "En-croute",
@@ -390,6 +407,8 @@ let textComponents = {
             // Add new items at the end to prevent links breaking
             "Puree",
             "Risotto",
+            "Flatbread",
+            "Curry",
         ],
         "xmas": [
             "Baubles",
@@ -445,7 +464,7 @@ let textComponents = {
             // No persistent links here (yet) so keep it alphabetical for ease of maintenance
             "\"A bit messy\"",
             "\"A bit rushed\"",
-            "\"A good start in the competition\"",
+            "\"A good start to the competition\"",
             "\"An unusual flavour combination\"",
             "\"Attention to detail\"",
             "\"Bland\"",
@@ -453,6 +472,8 @@ let textComponents = {
             "\"Challenging\"",
             "\"Chef's brain\"",
             "\"Claggy\"",
+            "\"Delicious\"",
+            "\"Delightful\"",
             "\"Faultless\"",
             "\"Flabby\"",
             "\"I can't eat that\"",
@@ -466,6 +487,7 @@ let textComponents = {
             "\"Raw\"",
             "\"Raw in the middle\"",
             "\"Restaurant-worthy\"",
+            "\"Slow down and focus\"",
             "\"Soggy bottom\"",
             "\"Too much salt\"",
             "\"Too sweet for me\"",
