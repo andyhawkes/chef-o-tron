@@ -21,14 +21,16 @@ function generateCard(){
     options.products = textComponents.products[datasets[dataset].products].map((x) => x);
     options.critiques = textComponents.critiques[datasets[dataset].critiques].map((x) => x);
 
-    // Remove first items from arrays where it is an empty string
-    for (const option in options){
-
+    // Remove items from arrays where it is an empty string
+    for (const prop in options) {
+        for (i = 0; i < options[prop].length; i++) {
+            if (options[prop][i] == ''){
+                options[prop].splice(i, 1);
+            }
+        }
     }
-    options.methods.shift();
-    options.modifiers.shift();
-    options.ingredients.shift();
 
+    // Grab random items based on the counts set in the selections object
     for (const property in selections) {
         for (i = 0; i < selections[property]; i++) {
             let randomIndex = Math.floor((Math.random() * options[property].length));
@@ -36,8 +38,12 @@ function generateCard(){
             options[property].splice(randomIndex, 1);
         }
     }
+
+    // Randomise the selected options
     selected = selected.sort((a, b) => 0.5 - Math.random());
-    for(s=0;s<selected.length;s++){
+
+    // Create tiles for each selected option and append to the bingo card
+    for (s = 0; s < selected.length; s++){
         let div = document.createElement("div");
         let span = document.createElement("span");
         div.classList.add('bingoSquare');
@@ -46,8 +52,8 @@ function generateCard(){
         cardElement.append(div);
     }
 
+    // Watch for tiles being checked off
     const tiles = document.querySelectorAll('.bingoSquare');
-
     tiles.forEach(el => el.addEventListener('click', event => {
         el.classList.toggle('checked');
         checkScore();
@@ -57,8 +63,9 @@ function generateCard(){
 function checkScore(){
     const tiles = document.querySelectorAll('.bingoSquare').length;
     const checked = document.querySelectorAll('.bingoSquare.checked').length;
-    if(tiles == checked){
+    if (tiles == checked){
         alert("BINGO!!!");
+        // Do something better here!
     } else {
         // console.log (`${checked} of ${tiles} squares checked off`);
     }

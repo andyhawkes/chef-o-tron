@@ -19,14 +19,14 @@ let textComponents = {
             "Deep-fried",
             "Dehydrated",
             "Flame-grilled",
-            "Free-range",
+            "", //Free-range moved to modifiers
             "Freeze-dried",
-            "Gluten-free",
+            "", //Gluten-free moved to modifiers
             "Hand-cut",
             "Herb-crusted",
             "Hot-smoked",
             "Jellied",
-            "Outdoor-reared",
+            "", //Outdoor-reared moved to modifiers
             "Panko-breaded",
             "Pickled",
             "Poached",
@@ -45,8 +45,8 @@ let textComponents = {
             "Textures of",
             "Thinly sliced",
             "Triple-cooked",
-            "Vegan",
-            "Vegetarian",
+            "", //Vegan moved to modifiers
+            "", //Vegetarian moved to modifiers
             "Whipped",
             // Add new items at the end to prevent links breaking
             "Cured",
@@ -66,14 +66,14 @@ let textComponents = {
             "Deconstructed",
             "Deep-fried",
             "Dehydrated",
-            "Free-range",
+            "", //Free-range moved to modifiers
             "Freeze-dried",
-            "Gluten-free",
+            "", //Gluten-free moved to modifiers
             "Hand-cut",
             "Herb-crusted",
             "Hot-smoked",
             "Jellied",
-            "Outdoor-reared",
+            "", //Outdoor-reared moved to modifiers
             "Panko-breaded",
             "Pickled",
             "Poached",
@@ -89,8 +89,8 @@ let textComponents = {
             "Textures of",
             "Thinly sliced",
             "Triple-cooked",
-            "Vegan",
-            "Vegetarian",
+            "", //Vegan moved to modifiers
+            "", //Vegetarian moved to modifiers
             "Whipped",
             // Add new items at the end to prevent links breaking
         ],
@@ -124,7 +124,12 @@ let textComponents = {
             "Miniature",
             "French trimmed",
             "40-day aged",
-            "Fermented"
+            "Fermented",
+            "Free-range",
+            "Gluten-free",
+            "Outdoor-reared",
+            "Vegan",
+            "Vegetarian",
         ],
         "xmas": [
             "",
@@ -278,6 +283,7 @@ let textComponents = {
             "Pumpkin",
             "Sea bream",
             "Coffee caramel",
+            "Snail",
         ],
         "xmas": [
             "",
@@ -327,7 +333,9 @@ let textComponents = {
             "Whole salmon",
             // Add new items at the end to prevent links breaking
             "Mulled wine",
-            "Marc de champagne"
+            "Marc de champagne",
+            "Porridge",
+            "Pork pie",
         ]
     },
     "products": {
@@ -480,8 +488,10 @@ let textComponents = {
             "\"Claggy\"",
             "\"Delicious\"",
             "\"Delightful\"",
+            "\"Exquisite\"",
             "\"Faultless\"",
             "\"Flabby\"",
+            "\"Heavy-handed\"",
             "\"I can't eat that\"",
             "\"I'd pay for that in a restaurant\"",
             "\"Inedible\"",
