@@ -98,6 +98,9 @@ hr.xmas:after {
 hr.info:after {
   content: "\f05a";
 }
+hr.bake:after {
+  content: "\f1fd";
+}
 
 header {
   margin-bottom: 1.5rem;
@@ -208,10 +211,60 @@ button:hover,
 #bingoCard div span {
   margin: auto;
 }
+#bingoCard div.joker {
+  font-size: 5rem;
+  background: radial-gradient(circle 8vw, red, orange 80%, rgb(255,255,255,0));
+}
 
-#bingoCard .checked {
+
+#bingoCard .checked,
+#bingoCard .joker.checked {
   background: radial-gradient(circle 8vw, blue, #1e90ff 80%, rgb(255,255,255,0));
   color: #fff;
+}
+
+#fanfare {
+  position: fixed;
+  top: 10vw;
+  left: 25vw;
+  width: 50vw;
+  height: 25vw;
+  font-size: 5vw;
+  background: #1e90ff;
+  color: #fff;
+  animation: wobble 250ms ease 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #fff;
+  cursor: pointer;
+  text-shadow: 0.25rem 0.25rem 0.25rem rgba(0,0,0,0.25);
+  box-shadow: 2rem 2rem 2rem rgba(0,0,0,0.5);
+}
+#fanfare:hover {
+  animation: none;
+}
+#fanfare span.advisory:after{
+  content: "Tap to dismiss";
+  font-size: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+}
+#fanfare #countdown {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 2rem;
+}
+
+@keyframes wobble {
+  33% {
+    transform: rotate(10deg);
+  }
+  66% {
+    transform: rotate(-10deg);
+  }
 }
 
 footer {

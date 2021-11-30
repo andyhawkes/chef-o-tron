@@ -25,5 +25,29 @@ const datasets = {
         "ingredients": "xmas",
         "products": "xmas",
         "critiques": "default"
+    },
+    "bakeoff": {
+        "methods": "bakeoff",
+        "modifiers": "bakeoff",
+        "ingredients": "bakeoff",
+        "products": "bakeoff",
+        "critiques": "bakeoff"
     }
+}
+
+const bingoSelections = {
+    "default":{
+        'methods': 4,
+        'modifiers': 2,
+        'ingredients': 8,
+        'products': 6,
+        'critiques': 5
+    },
+    "bakeoff": {
+        'methods': 0,
+        'modifiers': 2,
+        'ingredients': 10,
+        'products': 7,
+        'critiques': 6
+    },
 }
