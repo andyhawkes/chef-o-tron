@@ -1,4 +1,4 @@
-const combinations = textComponents.methods[dataset].length * textComponents.modifiers[dataset].length * textComponents.ingredients[dataset].length * textComponents.products[dataset].length;
+const combinations = countUnique(textComponents.methods[dataset]) * countUnique(textComponents.modifiers[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.products[dataset]);
 
 let indices = {
     "methods": 0,
@@ -45,6 +45,7 @@ function outputMenuIdea(newItem) {
     
     let textElement = document.getElementById('zeitgeistText');
     textElement.innerHTML = zeitgeistRecipe;
+
     updatePageTitle(zeitgeistRecipe);
     updateTwitterLink(twitterMessageText[dataset], zeitgeistRecipe);
 }

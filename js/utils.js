@@ -6,7 +6,7 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function updateHistory() {
+function updateHistory(replace) {
     let state = {
         'methodsIndex': indices.methods,
         'modifiersIndex': indices.modifiers,
@@ -15,7 +15,11 @@ function updateHistory() {
     };
     let title = zeitgeistRecipe;
     let url = `${window.location.pathname}?a=${indices.methods}&b=${indices.modifiers}&c=${indices.ingredients}&d=${indices.products}`;
-    history.pushState(state, title, url);
+    if(replace == true){
+        history.replaceState(state, title, url);
+    } else {
+        history.pushState(state, title, url);
+    }
 }
 
 function updatePageTitle(title) {
@@ -33,4 +37,23 @@ function updateTwitterLink(introText, messageText) {
     let tweetURL = twitterBaseURL + encodedMessage;
     let tweetButtons = document.querySelectorAll('.tweetButton');
     tweetButtons.forEach(el => el.setAttribute("href", tweetURL));
+}
+
+function checkQSParams(checkKey, checkValue) {
+    let QSparams = Object.fromEntries(new URLSearchParams(location.search));
+    if (QSparams[checkKey]) {
+        if(checkValue){
+            if (QSparams[checkKey] == checkValue){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+function countUnique(iterable) {
+    return new Set(iterable).size;
 }
