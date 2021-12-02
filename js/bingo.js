@@ -46,6 +46,8 @@ function generateCard(){
         let span = document.createElement("span");
         div.classList.add('bingoSquare');
         if (selected[s] == ''){
+            // To do: figure out where we're getting empty values from and fix it
+            // But for now, jokers are a thing 😉
             span.append('🃏');
             div.classList.add('joker');
         } else {
