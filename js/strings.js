@@ -363,6 +363,8 @@ let textComponents = {
             "Fish stock",
             "Red onion",
             "Lapsang souchong tea",
+            "Kimchi",
+            "Sauerkraut",
         ],
         "xmas": [
             "",
@@ -418,6 +420,7 @@ let textComponents = {
             "Caviar",
             "Vanilla",
             "Popping candy",
+            "Mulled wine",
         ],
         "bakeoff": [
             "",
@@ -639,7 +642,8 @@ let textComponents = {
             "Peanuts",
             "Blinis",
             "With popping candy",
-            "With edible gold leaf"
+            "With edible gold leaf",
+            "Brandy butter",
         ],
         "bakeoff": [
             "Bavarois",
