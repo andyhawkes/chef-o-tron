@@ -101,6 +101,9 @@ hr.info:after {
 hr.bake:after {
   content: "\f1fd";
 }
+hr.easter:after {
+  content: "\f0f5";
+}
 
 header {
   margin-bottom: 1.5rem;
