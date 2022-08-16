@@ -365,6 +365,10 @@ let textComponents = {
             "Lapsang souchong tea",
             "Kimchi",
             "Sauerkraut",
+            "Labneh",
+            "Whey",
+            "Strawberry",
+            "Cashew nut",
         ],
         "xmas": [
             "",
@@ -591,6 +595,8 @@ let textComponents = {
             "Broth",
             "Dashi",
             "Demi-glace",
+            "Chutney",
+            "Compote",
         ],
         "xmas": [
             "Baubles",
