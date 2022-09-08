@@ -62,9 +62,10 @@
   <div class="info">
     <h1>Tasting menu generator</h1>
     <p>
-      Tasting menus are hard - should you show off to your diners with exhaustive information on the dishes, or keep it moody and mysterious my just listing key ingredients?
-      <br>
-      Why not take it easy, pour yourself another house-made kombucha, and let the CHEF-O-TRON tasting menu bot
+      Tasting menus are hard - should you show off to your diners with exhaustive information on the dishes and the provenance of your ingreients, or keep it more minimal, moody, and mysterious by just listing a few key ingredients?
+    </p>
+    <p>
+      Why not take it easy, pour yourself another artisanal kombucha, and let the CHEF-O-TRON tasting menu bot
       help with <span id="combinations">thousands of</span> unique menu ideas just for you!
     </p>
   </div>
@@ -73,9 +74,9 @@
     <ul id="menuText"></ul>
   </div>
 
-  <button onClick="outputTastingMenu(true,7)">Give me more!</button>
-  <a href="https://twitter.com/intent/tweet?text=%40chef_o_tron%20is%20awesome" class="button tweetButton" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet this</a>
-  <hr class="icon xmas">
+  <button onClick="generateNewMenu()">Give me more!</button>
+  <!-- <a href="https://twitter.com/intent/tweet?text=%40chef_o_tron%20is%20awesome" class="button tweetButton" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet this</a> -->
+  <hr class="icon lightning">
 
   <footer>
     <p>This site was quickly (and very roughly) cobbled together by <a href="https://twitter.com/andyhawkes" target="_blank">Andy Hawkes</a> because <a href="https://twitter.com/justcookit/status/1460522952978571264" target="_blank">Alex Rushmer</a> and <a href="https://twitter.com/DhruvBaker1/status/1460568926727946241" target="_blank">Dhruv Baker</a> were moaning about ridiculous seasonal foodstuffs on Twitter.</p>
@@ -97,7 +98,6 @@
   <script src="/js/config.js"></script>
   <script src="/js/utils.js"></script>
   <script src="/js/strings.js"></script>
-  <!-- <script src="/js/menu-item.js"></script> -->
   <script src="/js/tasting-menu.js"></script>
 
 </body>

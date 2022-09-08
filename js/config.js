@@ -8,7 +8,8 @@ const twitterHashtag = "#chefotron";
 const twitterUsername = "@chef_o_tron";
 const twitterMessageText = {
     "default": `Loving this recipe idea from ${twitterUsername} - `,
-    "xmas": `Loving this Christmas recipe idea from ${twitterUsername} - `
+    "xmas": `Loving this Christmas recipe idea from ${twitterUsername} - `,
+    "tasting menu": `${twitterUsername} has created a fabulous `
 }
 
 const datasets = {

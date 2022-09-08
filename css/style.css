@@ -162,7 +162,9 @@ nav ul li a.active:after {
 
 #menuText {
   max-width: 80%;
-  padding: 0;
+  padding: 1rem 2rem;
+  background-color: antiquewhite;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(51, 51, 51, 0.5);
 }
 
 #menuText li {
