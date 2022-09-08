@@ -56,7 +56,6 @@ function outputTastingMenu() {
     }
 
     if (newMenu === true) {
-        console.log('newMenu is true - updating history');
         updateMenuHistory();
     }
 
@@ -65,7 +64,6 @@ function outputTastingMenu() {
 }
 
 function updateMenuHistory(replace) {
-    console.log('Updating menu history');
     let state = {
         'methodsIndex': indices.methods,
         'modifiersIndex': indices.modifiers,
@@ -73,10 +71,7 @@ function updateMenuHistory(replace) {
         'productsIndex': indices.products
     };
     let title = zeitgeistRecipe;
-    console.log(indices);
-    console.log('Encoding menu to Base64');
     let menu = btoa(JSON.stringify(indices));
-    console.log(menu);
     let url = `${window.location.pathname}?m=${menu}`;
     if (replace == true) {
         history.replaceState(state, title, url);
@@ -86,7 +81,6 @@ function updateMenuHistory(replace) {
 }
 
 function updateIndicesFromQSParams(){
-    console.log('Getting menu from QS');
     let QSparams = Object.fromEntries(new URLSearchParams(location.search));
 
     // try {
@@ -98,7 +92,6 @@ function updateIndicesFromQSParams(){
     // }
 
     let menu = QSparams.m ? JSON.parse(atob(QSparams.m)) : {};
-    console.log(menu);
     let indicesAreValid = validateIndices(menu);
     if( indicesAreValid == true ){
         for (let step = 0; step < menu.length; step++) {
@@ -120,10 +113,8 @@ function validateIndices(menu) {
     // just check that it's a non-sero length?
     if (typeof menu === 'object' && menu !== null && Array.isArray(menu) && menu.length > 0) {
         newMenu = false;
-        console.log("Indices are valid");
         return true;
     }
-    console.log("indices are not valid");
     return false;
 }
 
