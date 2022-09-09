@@ -32,6 +32,10 @@ a.active:hover {
 sup a {
   text-decoration: none;
 }
+a.logo:hover,
+a.logo:focus {
+  background:transparent;
+}
 
 .info {
   display: flex;
