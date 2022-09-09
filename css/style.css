@@ -162,14 +162,16 @@ nav ul li a.active:after {
 
 #menuText {
   max-width: 80%;
-  padding: 1rem 2rem;
-  background-color: antiquewhite;
+  padding: 1rem 2rem 5rem;
+  background: antiquewhite url("/images/logo-with-text.png") no-repeat center calc(100% - 1.5rem);
+  background-size: auto 3rem;
+  background-blend-mode: overlay;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(51, 51, 51, 0.5);
 }
 
 #menuText li {
   list-style-type: none;
-  padding: 1rem 0 1.5rem;
+  padding: 1rem 0;
   font-family: 'Tangerine';
   font-weight: bold;
   font-size: 2.5rem;
@@ -324,3 +326,5 @@ footer {
     animation: octocat-wave 560ms ease-in-out
   }
 }
+
+@media print {}

@@ -358,7 +358,7 @@ let textComponents = {
             "Wild garlic",
             "Caper",
             "Chicken stock",
-            "Beek stock",
+            "Beef stock",
             "Lamb stock",
             "Fish stock",
             "Red onion",
