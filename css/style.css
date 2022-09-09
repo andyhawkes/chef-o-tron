@@ -104,6 +104,9 @@ hr.bake:after {
 hr.easter:after {
   content: "\f0f5";
 }
+hr.menu:after {
+  content: "\f03a";
+}
 
 header {
   margin-bottom: 1.5rem;
