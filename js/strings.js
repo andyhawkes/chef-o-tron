@@ -140,6 +140,7 @@ let textComponents = {
             "Sun-dried",
             "Jerk",
             "Sweet & sour",
+            "Locally sourced",
         ],
         "xmas": [
             "",

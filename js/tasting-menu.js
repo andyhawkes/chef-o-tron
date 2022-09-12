@@ -1,8 +1,10 @@
-const combinations = countUnique(textComponents.methods[dataset]) * countUnique(textComponents.modifiers[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.products[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]);
+const combinations = countUnique(textComponents.methods[dataset]) * countUnique(textComponents.modifiers[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.products[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]);
 
-let indices = []
-let recipeComponents = {}
-let zeitgeistRecipe = "7 course tasting menu"
+let indices = [];
+let recipeComponents = {};
+let courses = 7;
+let zeitgeistRecipe = `${courses} course tasting menu`;
+let maxIngredients = 5;
 let newMenu = true;
 
 function getRandomRecipeComponents(component, count = 1) {
@@ -15,10 +17,12 @@ function getRandomRecipeComponents(component, count = 1) {
 }
 
 function generateMenuItems(count = 1){
+    indices = [];
     for (let step = 0; step < count; step++) {
+        let randomIngredientCount = Math.ceil(Math.random() * maxIngredients);
         let method = getRandomRecipeComponents('methods');
         let modifier = getRandomRecipeComponents('modifiers');
-        let ingredients = getRandomRecipeComponents('ingredients', 3);
+        let ingredients = getRandomRecipeComponents('ingredients', randomIngredientCount);
         let product = getRandomRecipeComponents('products');
         let params = {};
         params.method = method[0];
@@ -40,12 +44,28 @@ function outputTastingMenu() {
         let modifier = textComponents.modifiers[datasets[dataset]['modifiers']][indices[step].modifier]
         let ingredients = []
         for (let i = 0; i < indices[step].ingredients.length; i++) {
-            ingredients[i] = textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]];
+            if (textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]] !== ""){
+                //Exclude empty ingredient strings
+                ingredients[i] = textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]];
+            }
         }
         let product = textComponents.products[datasets[dataset]['products']][indices[step].product];
 
-        let rawText = `${method} ${ingredients[0]} ${product}, ${modifier} ${ingredients[1]}, ${ingredients[2]}`;
-
+        let rawText = "";
+        switch (ingredients.length){
+            case 0:
+                rawText = `${method} ${modifier} ${product}`;
+                break;
+            case 1:
+                rawText = `${method} ${modifier} ${ingredients[0]} ${product}`;
+                break;
+            default:
+                rawText = `${method} ${ingredients[0]} ${product}, ${modifier} ${ingredients[1]}`;
+                for (let i = 2; i < ingredients.length; i++) {
+                    rawText += `, ${ingredients[i]}`
+                }
+        }
+        
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(capitalizeFirstLetter(rawText.trim().toLowerCase())));
         textElement.appendChild(li);
@@ -83,7 +103,7 @@ function updateIndicesFromQSParams(){
     //     parsedMenu = JSON.parse(atob(QSparams.m));
     // } catch (e) {
     //     console.log("m is not valid JSON");
-    //     generateMenuItems(7);
+    //     generateMenuItems(courses);
     //     // throw new Error('Error occured: ', e);
     // }
 
@@ -101,7 +121,7 @@ function updateIndicesFromQSParams(){
             newMenu = false;
         }
     } else {
-        generateMenuItems(7);
+        generateMenuItems(courses);
     }
 }
 
@@ -128,7 +148,7 @@ function resetMenu() {
 
 function generateNewMenu() {
     newMenu = true;
-    generateMenuItems(7);
+    generateMenuItems(courses);
     outputTastingMenu();
 }
 
