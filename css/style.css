@@ -44,7 +44,7 @@ a.logo:focus {
   flex-wrap: wrap;
 }
 .info * {
-  max-width: 80%;
+  max-width: 40rem;
 }
 .info ul {
   text-align: left;
