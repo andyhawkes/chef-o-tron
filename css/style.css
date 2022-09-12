@@ -175,7 +175,7 @@ nav ul li a.active:after {
 }
 
 #menuText {
-  max-width: 80%;
+  max-width: 40rem;
   padding: 1rem 2rem 5rem;
   background: antiquewhite url("/images/logo-with-text.png") no-repeat center calc(100% - 1.5rem);
   background-size: auto 3rem;

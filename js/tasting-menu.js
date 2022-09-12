@@ -44,9 +44,9 @@ function outputTastingMenu() {
         let modifier = textComponents.modifiers[datasets[dataset]['modifiers']][indices[step].modifier]
         let ingredients = []
         for (let i = 0; i < indices[step].ingredients.length; i++) {
-            if (textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]] !== ""){
+            if (textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]] !== ''){
                 //Exclude empty ingredient strings
-                ingredients[i] = textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]];
+                ingredients.push(textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]]);
             }
         }
         let product = textComponents.products[datasets[dataset]['products']][indices[step].product];
