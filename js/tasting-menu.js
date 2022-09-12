@@ -9,10 +9,7 @@ function getRandomRecipeComponents(component, count = 1) {
     let randomComponents = [];
     for (let step = 0; step < count; step++) {
         let index = Math.floor((Math.random() * textComponents[component][datasets[dataset][component]].length))
-        randomComponents[step] = {
-            "i": index,
-            "v": textComponents[component][datasets[dataset][component]][index].toLowerCase()
-        }
+        randomComponents[step] = index;
     }
     return randomComponents;
 }
@@ -24,10 +21,10 @@ function generateMenuItems(count = 1){
         let ingredients = getRandomRecipeComponents('ingredients', 3);
         let product = getRandomRecipeComponents('products');
         let params = {};
-        params.method = method[0].i;
-        params.product = product[0].i;
-        params.modifier = modifier[0].i;
-        params.ingredients = [ingredients[0].i, ingredients[1].i, ingredients[2].i];
+        params.method = method[0];
+        params.product = product[0];
+        params.modifier = modifier[0];
+        params.ingredients = [ingredients][0];
 
         indices[step] = params;
     }
@@ -41,11 +38,10 @@ function outputTastingMenu() {
     for (let step = 0; step < indices.length; step++) {
         let method = textComponents.methods[datasets[dataset]['methods']][indices[step].method]
         let modifier = textComponents.modifiers[datasets[dataset]['modifiers']][indices[step].modifier]
-        let ingredients = [
-            textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[0]],
-            textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[1]],
-            textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[2]]
-        ]
+        let ingredients = []
+        for (let i = 0; i < indices[step].ingredients.length; i++) {
+            ingredients[i] = textComponents.ingredients[datasets[dataset]['ingredients']][indices[step].ingredients[i]];
+        }
         let product = textComponents.products[datasets[dataset]['products']][indices[step].product];
 
         let rawText = `${method} ${ingredients[0]} ${product}, ${modifier} ${ingredients[1]}, ${ingredients[2]}`;
@@ -110,7 +106,7 @@ function updateIndicesFromQSParams(){
 }
 
 function validateIndices(menu) {
-    // just check that it's a non-sero length?
+    // just check that it's a non-zero length?
     if (typeof menu === 'object' && menu !== null && Array.isArray(menu) && menu.length > 0) {
         newMenu = false;
         return true;
