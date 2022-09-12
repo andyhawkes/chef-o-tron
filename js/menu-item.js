@@ -62,6 +62,7 @@ function validateIndices() {
     // If all indexes are 0 then re-create them randomly
     if (indices.methods == 0 && indices.modifiers == 0 && indices.ingredients == 1 && indices.products == 0) {
         randomiseRecipeComponents();
+        updateHistory(true);
     } else {
         restoreRecipeComponentsFromIndices();
     }
