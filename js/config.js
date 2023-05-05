@@ -33,6 +33,13 @@ const datasets = {
         "ingredients": "bakeoff",
         "products": "bakeoff",
         "critiques": "bakeoff"
+    },
+    "dessert": {
+        "methods": "dessert",
+        "modifiers": "dessert",
+        "ingredients": "dessert",
+        "products": "dessert",
+        "critiques": "default"
     }
 }
 
