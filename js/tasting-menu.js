@@ -1,5 +1,3 @@
-const combinations = countUnique(textComponents.methods[dataset]) * countUnique(textComponents.modifiers[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.products[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.ingredients[dataset]);
-
 let indices = [];
 let recipeComponents = {};
 let courses = 7;
@@ -8,6 +6,8 @@ let zeitgeistRecipe = `${courses} course tasting menu`;
 let maxIngredients = 5;
 let newMenu = true;
 const startingDataset = dataset
+
+const combinations = countUnique(textComponents.methods[dataset]) * countUnique(textComponents.modifiers[dataset]) * countUnique(textComponents.ingredients[dataset]) * countUnique(textComponents.products[dataset]) * (maxIngredients * countUnique(textComponents.ingredients[dataset])) * courses;
 
 function getRandomRecipeComponents(component, count = 1) {
     let randomComponents = [];
